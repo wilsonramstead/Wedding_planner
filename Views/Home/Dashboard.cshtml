@@ -1,0 +1,57 @@
+
+@model List<Wedding>
+
+<div class="header">
+    <h1>Welcome to the Wedding Planner</h1>
+    <a href="/logout">Log Out</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Wedding</th>
+            <th>Date</th>
+            <th>Guest</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    @{
+        foreach(Wedding w in Model)
+        {
+        <tr>
+            <td><a href="/showwedding/@w.WeddingID"> @w.Name1 & @w.Name2</a></td>
+            <td>@w.Date.ToString("MMMM dd yyyy")</td>
+            <td>@w.Weddings.Count</td>
+            @{
+                if(ViewBag.ID == @w.CreatorID)
+                {
+                    
+                    <td><a href="/delete/@w.WeddingID">Delete</a></td>
+                }
+                else
+                {
+                    bool attending = false;
+                    foreach(Event e in w.Weddings)
+                    {
+                        if(e.UserID == ViewBag.ID)
+                        {
+                            attending = true;
+                        }
+                    }
+                    if(attending)
+                    {
+                        <td><a href="/undoprocessevent/@w.WeddingID">Un-RSVP</a></td>
+                    }
+                    else
+                    {
+                        <td><a href="/processevent/@w.WeddingID">RSVP</a></td>
+                    }
+                }
+            }
+        </tr>
+        }
+    }
+    </tbody>
+</table>
+<button class="btn btn-primary"><a href="/createwedding/@ViewBag.ID">New Wedding</a></button>
