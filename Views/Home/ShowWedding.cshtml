@@ -5,15 +5,17 @@
     <h1>@Model.Name1 and @Model.Name2's Wedding</h1>
     <a href="/dashboard/@ViewBag.userID">Dashboard</a>
 </div>
-<div class="left">
-    <h3>Date: @Model.Date.ToString("MMMM dd, yyyy")</h3>
-    <h3>Guests: </h3>
-    <ul>
-        @{
-            foreach(var e in Model.Weddings)
-            {
-                <li>@e.User.FirstName</li>
+<div class="body">
+    <div class="left">
+        <h3>Date: @Model.Date.ToString("MMMM dd, yyyy")</h3>
+        <h3>Guests: </h3>
+        <ul>
+            @{
+                foreach(var e in Model.Weddings)
+                {
+                    <li>@e.User.FirstName</li>
+                }
             }
-        }
-    </ul>
+        </ul>
+    </div>
 </div>

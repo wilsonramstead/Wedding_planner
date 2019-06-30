@@ -39,7 +39,15 @@ body {
 .left {
     width: 49%;
     display: inline-block;
-    
+}
+.left input {
+    width: 63%;
+    float: right;
+    margin-left: 2%;
+}
+.left input, label {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .form {
     width: 50%;
@@ -50,16 +58,39 @@ body {
     display: inline-block;
     vertical-align: top;
 }
+.right input {
+    width: 63%;
+    float: right;
+    margin-left: 2%;
+}
+.right input, label {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .form h2 {
     margin-left: 10%;
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    color: goldenrod;
 }
 .form p {
     margin: 20px 0px 20px 0px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 16px;
 }
 
+.header {
+    border: 2px solid #79a8f2;
+    border-radius: 0px 0px 10px 10px;
+    border-top: none;
+    padding-left: 3%;
+    font-family: 'literata', serif;
+    color: white;
+    background-image: linear-gradient(white, #79a8f2);
+}
 .header h1 {
     display: inline-block;
-    margin-right: 30%;
+    margin-right: 50%;
 }
 .header a {
     text-decoration: underline;
@@ -67,7 +98,36 @@ body {
     display: inline-block;
     margin-left: 1%;
 }
+.header h4 {
+    display: inline-block;
+    margin-right: 3%;
+}
 
 button a {
     color: white;
+}
+.body {
+    min-height: 500px;
+    background-color: #ffe8e8;
+    padding: 20px 2% 20px 2%;
+    border: 1px solid #79a8f2;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.body button {
+    float: right;
+}
+.body thead {
+    font-family: 'literata', serif;
+    font-size: 18px;
+    background-color: #e9ecef;
+}
+.body tbody {
+    font-family: 'satisfy', cursive;
+    font-size: 18px;
+    background-color: white;
+}
+.body tbody a {
+    color: goldenrod;
 }

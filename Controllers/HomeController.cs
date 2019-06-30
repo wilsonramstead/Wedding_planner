@@ -87,6 +87,8 @@ namespace wedding_planner.Controllers
             if(HttpContext.Session.GetInt32("userID") == ID)
             {
                 ViewBag.ID = ID;
+                User CurrentUser = dbContext.Users.FirstOrDefault(u => u.UserID == ID);
+                ViewBag.CurrentUser = CurrentUser;
                 List<Wedding> allWeddings = dbContext.Weddings
                 .Include(w => w.Weddings)
                 .ThenInclude(e => e.User)
